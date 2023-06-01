@@ -29,6 +29,8 @@ class AddComment extends Component
 
         $this->book->comments()->create($validated);
 
+        $this->emitTo('book.comments', 'commentAdded');
+
         $this->reset();
     }
 

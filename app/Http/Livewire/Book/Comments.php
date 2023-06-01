@@ -15,6 +15,8 @@ class Comments extends Component
     /** @var Book $book */
     public $book;
 
+    protected $listeners = ['commentAdded' => '$refresh'];
+
     public function render()
     {
         return view('livewire.book.comments', [
