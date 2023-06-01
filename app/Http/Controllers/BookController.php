@@ -13,4 +13,9 @@ class BookController extends Controller
 
         return view('pages.index', compact('books'));
     }
+
+    public function show(Book $book): View
+    {
+        return view('pages.book.index', compact('book'));
+    }
 }
