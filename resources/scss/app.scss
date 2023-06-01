@@ -1,2 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons.css";
+
+.bi-star {
+    &-yellow {
+        color: #fbc634;
+    }
+
+    &-gray {
+        color: #cecece;
+    }
+}

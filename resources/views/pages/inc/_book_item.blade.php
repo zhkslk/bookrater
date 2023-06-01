@@ -6,11 +6,14 @@
             </a>
         </div>
         <div class="card-body">
+            <div class="mb-2">
+                <x-rating :rating="$book->rating" />
+            </div>
             <h5 class="card-title">
                 {{ $book->title }}
             </h5>
             <p class="card-text">
-                {{ $book->limited_description }}
+                {{ $book->short_description }}
             </p>
         </div>
     </div>

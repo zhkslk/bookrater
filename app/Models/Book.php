@@ -43,7 +43,7 @@ class Book extends Model
         'rating',
     ];
 
-    protected function getLimitedDescriptionAttribute(): string
+    protected function getShortDescriptionAttribute(): string
     {
         return Str::limit($this->description, 150);
     }
