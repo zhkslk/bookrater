@@ -32,6 +32,8 @@ class AddComment extends Component
         $this->emitTo('book.comments', 'commentAdded');
 
         $this->reset();
+
+        session()->flash('message', 'Comment successfully added.');
     }
 
     public function render()

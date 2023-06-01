@@ -1,4 +1,10 @@
 <form wire:submit.prevent="submit" class="mb-4 bg-secondary-subtle rounded p-3">
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-md-6 mb-2">
             <label for="name" class="form-label">Name</label>
@@ -32,8 +38,11 @@
             @error('body')<div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
         <div class="col-12">
-            <button class="btn btn-primary" type="submit">
-                Add comment
+            <button class="btn btn-primary"
+                    type="submit"
+                    wire:loading.delay.attr="disabled"
+            >
+                Add comment <span wire:loading.delay>...</span>
             </button>
         </div>
     </div>
