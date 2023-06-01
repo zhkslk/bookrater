@@ -12,7 +12,8 @@ class Comments extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public Book $book;
+    /** @var Book $book */
+    public $book;
 
     public function render()
     {

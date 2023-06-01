@@ -18,11 +18,14 @@
                 </div>
             </div>
         </div>
-        <div>
-            <div class="text-center fs-4 mb-3">
-                Comments
+        <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2">
+                <div class="text-center fs-4 mb-4">
+                    Comments
+                </div>
+                <livewire:book.add-comment :book="$book" />
+                <livewire:book.comments :book="$book" />
             </div>
-            <livewire:book.comments :book="$book" />
         </div>
     </div>
 

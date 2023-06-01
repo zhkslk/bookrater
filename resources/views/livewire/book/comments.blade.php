@@ -1,4 +1,4 @@
-<div class="col-12 col-lg-8 offset-lg-2">
+<div>
     @foreach($comments as $comment)
         <div class="card mb-3">
             <div class="card-header">
