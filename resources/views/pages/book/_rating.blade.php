@@ -2,4 +2,7 @@
     <div>
         <x-rating :rating="$book->rating" />
     </div>
+    <div>
+        {{ $book->rating }}
+    </div>
 </div>

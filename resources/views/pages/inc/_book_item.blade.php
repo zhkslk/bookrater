@@ -10,7 +10,9 @@
                 <x-rating :rating="$book->rating" />
             </div>
             <h5 class="card-title">
-                {{ $book->title }}
+                <a href="{{ route('book', $book) }}" class="text-black link-underline-light">
+                    {{ $book->title }}
+                </a>
             </h5>
             <p class="card-text">
                 {{ $book->short_description }}

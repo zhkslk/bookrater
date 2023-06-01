@@ -7,7 +7,7 @@
                         {{ $comment->name }}
                     </div>
                     <div class="col-12 col-md-4 text-md-center">
-                        stars
+                        <x-rating :rating="$comment->rating" />
                     </div>
                     <div class="col-12 col-md-4 text-md-end text-secondary" style="font-size: 0.9rem">
                         {{ $comment->created_at->diffForHumans() }}
