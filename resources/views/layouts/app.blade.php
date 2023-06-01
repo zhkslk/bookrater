@@ -13,6 +13,7 @@
     <link rel="manifest" href="/site.webmanifest">
 
     @vite('resources/scss/app.scss')
+    @livewireStyles
 </head>
 <body>
 
@@ -24,5 +25,6 @@
         @include('pages.inc.footer')
     </div>
 
+    @livewireScripts
 </body>
 </html>
