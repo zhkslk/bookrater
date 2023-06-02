@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Book;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,6 +18,7 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
+            'book_id' => Book::factory()->create()->id,
             'name' => $this->faker->firstName,
             'rating' => $this->faker->numberBetween(0, 5),
             'body' => $this->faker->text,
