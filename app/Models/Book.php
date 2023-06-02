@@ -52,4 +52,10 @@ class Book extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function updateRating(float $rating): void
+    {
+        $this->rating = round($rating, 2);
+        $this->save();
+    }
 }

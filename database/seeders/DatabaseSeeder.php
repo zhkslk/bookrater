@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Book;
 use App\Models\Comment;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,5 +23,7 @@ class DatabaseSeeder extends Seeder
                      'book_id' => $book->id
                  ]);
              });
+
+         Artisan::call('books:calculate-rating');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Book;
+use App\Services\RatingCalculator;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
@@ -22,9 +23,8 @@ class RecalculateBookRating
      */
     public function handle(): void
     {
-        $averageRating = $this->book->comments()->average('rating');
-        $this->book->update([
-            'rating' => round($averageRating, 2),
-        ]);
+        $rating = RatingCalculator::handle($this->book);
+
+        $this->book->updateRating($rating);
     }
 }
