@@ -12,9 +12,6 @@ class BookTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
-    /**
-     * A book can be created.
-     */
     public function test_book_can_be_created(): void
     {
         Book::factory()->create();
