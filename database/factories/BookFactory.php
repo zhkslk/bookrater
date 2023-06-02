@@ -20,7 +20,6 @@ class BookFactory extends Factory
 
         return [
             'title' => ucfirst($this->faker->words($wordsInTitle, true)),
-            'rating' => $this->faker->randomFloat(2, 0, 5),
             'description' => $this->faker->text(300),
         ];
     }

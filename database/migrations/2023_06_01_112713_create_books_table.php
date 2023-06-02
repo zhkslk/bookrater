@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('cover')->default('/img/default.png');
             $table->text('description');
-            $table->float('rating');
+            $table->float('rating')->default(0);
             $table->timestamps();
         });
     }
