@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Book;
 use App\Models\Comment;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -14,7 +15,9 @@ class CommentTest extends TestCase
 
     public function test_comment_can_be_created(): void
     {
-        Comment::factory()->create();
+        Comment::factory()->create([
+            'book_id' => Book::factory()->create(),
+        ]);
 
         $this->assertDatabaseCount('comments', 1);
     }
@@ -40,6 +43,7 @@ class CommentTest extends TestCase
     {
         try {
             Comment::factory()->create([
+                'book_id' => Book::factory()->create(),
                 'name' => null,
             ]);
         } catch (\Exception $e) {
@@ -57,6 +61,7 @@ class CommentTest extends TestCase
     {
         try {
             Comment::factory()->create([
+                'book_id' => Book::factory()->create(),
                 'body' => null,
             ]);
         } catch (\Exception $e) {
@@ -74,6 +79,7 @@ class CommentTest extends TestCase
     {
         try {
             Comment::factory()->create([
+                'book_id' => Book::factory()->create(),
                 'rating' => null,
             ]);
         } catch (\Exception $e) {

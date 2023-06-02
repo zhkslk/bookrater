@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
              ->count(100)
              ->create()
              ->each(function($book) {
-                 Comment::factory()->count(rand(5, 35))->create([
-                     'book_id' => $book->id
+                 Comment::factory()->count(rand(5, 35))->createQuietly([
+                     'book_id' => $book->id,
                  ]);
              });
 
