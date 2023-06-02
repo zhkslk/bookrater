@@ -8,6 +8,6 @@ class RatingCalculator
 {
     public static function handle(Book $book): float
     {
-        return $book->comments()->average('rating');
+        return $book->comments()->average('rating') ?? 0.0;
     }
 }

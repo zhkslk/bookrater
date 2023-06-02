@@ -24,6 +24,9 @@ class DatabaseSeeder extends Seeder
                  ]);
              });
 
-         Artisan::call('books:calculate-rating');
+        $this->command->line("Calculating books rating...");
+        Artisan::call('books:calculate-rating');
+
+        $this->command->info("Seeding completed successfully.");
     }
 }
